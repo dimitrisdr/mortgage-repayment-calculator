@@ -1,0 +1,192 @@
+/* css Reser */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--Slate-300);
+  font-family: 'Plus Jakarta Sans';
+  display: grid;
+  place-items: center;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+input, select, button {
+  font: inherit;
+  background-color: inherit;
+
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* ---------------------------------------------------------------- */
+
+/* custom properties */
+
+:root {
+ 
+  /* Colors */
+
+ /* Primary */
+
+--Lime: hsl(61, 70%, 52%);
+--Lime-L: hsl(61 90% 72% / .7);
+--Red: hsl(4, 69%, 50%);
+
+/* Neutral */
+
+--White: hsl(0, 0%, 100%);
+--Slate-100: hsl(202, 86%, 94%);
+--Slate-300: hsl(203, 41%, 72%);
+--Slate-500: hsl(200, 26%, 54%);
+--Slate-700: hsl(200, 24%, 40%);
+--Slate-900: hsl(202, 55%, 16%);
+--Slate-950: hsl(202, 55%, 10%);
+}
+
+/* font-faces */
+
+@font-face {
+  font-family: 'Plus Jakarta Sans Italic';
+  src: url('src/assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('src/assets/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100 900;
+}
+
+/* ------------------------------------------------------------------ */
+
+/* utility classes */
+
+/*------------ fonts custom classes----------- */
+
+.ff-jak-it {
+  font-family: 'Plus Jakarta Sans Italic';
+}
+
+.ff-jak-nor {
+  font-family: 'Plus Jakarta Sans';
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fs-500 {
+  font-size: 1.25rem;
+}
+
+.fs-700 {
+  /* font-size: clamp(1.8rem, 0.5rem + 3vw, 2.1rem); */
+  font-size: 1.6rem
+}
+/* ------------------------------------------------- */
+
+/*------------ colors custom classes----------- */
+
+.bg-clr-slate-950 {
+  background-color: var(--Slate-950);
+}
+
+.clr-slate-900 {
+  color: var(--Slate-900);
+}
+
+.bg-clr-slate-900 {
+  background-color: var(--Slate-900);
+}
+
+
+.clr-slate-700 {
+  color: var(--Slate-700);
+}
+
+.bg-clr-slate-700 {
+  background-color: var(--Slate-700);
+}
+
+.clr-slate-500 {
+  color: var(--Slate-500);
+}
+
+.bg-clr-slate-500 {
+  background-color: var(--Slate-500);
+}
+
+.clr-slate-300 {
+  color: var(--Slate-300);
+}
+
+.bg-clr-slate-300 {
+  background-color: var(--Slate-300);
+}
+
+.clr-slate-100 {
+  color: var(--Slate-100);
+}
+
+.bg-clr-slate-100 {
+  background-color: var(--Slate-100);
+}
+
+.clr-lime {
+  color: var(--Lime);
+}
+
+.bg-clr-lime {
+  background-color: var(--Lime);
+}
+
+.bg-clr-white {
+  background-color: var(--White);
+}
+
+/* ------------------layout utility classses------------ */
+
+.grid-item {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+
+.flex-item {
+  display: flex;
+  align-items: center;
+  gap: var(--gap, 1rem);
+}
+
+/* main */
+
+#root {
+  display: grid;
+}

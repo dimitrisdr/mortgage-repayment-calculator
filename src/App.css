@@ -30,12 +30,17 @@
 
 .form-item {
   --gap:0.5rem;
+  align-self: flex-start;
 }
 
 .input-item {
   --gap:0;
   border:1px solid var(--Slate-700);
   border-radius: 4px;
+}
+
+.input-item.input-item:is(.input-item[data-error="false"]) {
+  border: 1px solid var(--Red);
 }
 
 .input-item:hover, .input-item:has(.form-input:focus) {

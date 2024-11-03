@@ -3,7 +3,7 @@ import HeaderComp from "./headerComp"
 import FormComp from "./formComp"
 import { DataContext } from "../hooks/clearContext"
 
-const data = {amount:'', term:'', rate:''}
+const data = {amount:'', term:'', rate:'', mortageType: ''}
 
 export default function Calculator() {
 

@@ -5,10 +5,13 @@ import { DataContext } from "../hooks/clearContext"
 export default function NumberInputGroup({children, name, label, inputValue}) {
 
     const {inputValues, setInputValues} = useContext(DataContext)
-    
+    const [valid, setValid] = useState(true)
+
     function handleChange(e) {
+        const regexPatternForPositive = /^[0-9]*\.?[0-9]+$/
         const {name, value} = e.target;
-        setInputValues((previewsValues) => ({...previewsValues, [name]:value}));
+        setValid(regexPatternForPositive.test(value))
+        setInputValues((previewsValues) => ({...previewsValues, [name]:value}));   
     }
 
     return (
@@ -16,15 +19,19 @@ export default function NumberInputGroup({children, name, label, inputValue}) {
             <label className="form-label ff-jak-it clr-slate-700" htmlFor={name}>
                 {children}
             </label>
-            <div className="input-item flex-item">
-                <span className="form-item-label fw-500 bg-clr-slate-100 clr-slate-900 fs-500">{label}</span>
+            <div className="input-item flex-item" data-error={valid}>
+                <span className={`form-item-label fw-500 ${valid?'bg-clr-slate-100': 'clr-white bg-clr-red'} clr-slate-900 fs-500`}>{label}</span>
                 <input 
                     type="number" 
                     className="form-input"
+                    inputMode="decimal" 
+                    min={0}
                     name={name}
                     value={inputValue} 
-                    onChange={handleChange}/>
-            </div>        
+                    onChange={handleChange}
+                />
+            </div>
+            {!valid &&  <span className="error-state clr-red">Invalid value</span> }    
         </div>
     )
 }

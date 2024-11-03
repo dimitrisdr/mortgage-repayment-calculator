@@ -167,8 +167,20 @@ p {
   background-color: var(--Lime);
 }
 
+.clr-white {
+  color: var(--White);
+}
+
 .bg-clr-white {
   background-color: var(--White);
+}
+
+.clr-red {
+  color:var(--Red)
+}
+
+.bg-clr-red {
+  background-color:var(--Red)
 }
 
 /* ------------------layout utility classses------------ */

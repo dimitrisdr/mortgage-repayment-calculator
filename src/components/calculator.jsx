@@ -1,20 +1,22 @@
 import { useState } from "react"
-import { ClearContext } from "../hooks/clearContext"
 import HeaderComp from "./headerComp"
+import FormComp from "./formComp"
+import { DataContext } from "../hooks/clearContext"
 
+const data = {amount:'', term:'', rate:''}
 
 export default function Calculator() {
 
-    const [clear, setClear] = useState(false)
+    const [inputValues, setInputValues] = useState(data)
     
     return (
         <section className="calculator-section grid-item bg-clr-white" aria-label="Mortage Calculator">
-            <ClearContext.Provider value={{clear, setClear}}>           
+            <DataContext.Provider value={{inputValues, setInputValues}}>           
                 <HeaderComp />
                 <div className="form-container">
                     <FormComp />
                 </div>
-            </ClearContext.Provider>    
+            </DataContext.Provider>    
         </section>
     )
 }

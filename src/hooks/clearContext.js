@@ -1,1 +1,3 @@
-export const ClearContext = React.createContext(null)
+import React from "react";
+
+export const DataContext = React.createContext(undefined)

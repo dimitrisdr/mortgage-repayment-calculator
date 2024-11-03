@@ -206,6 +206,10 @@
     flex-direction: row;
   }
 
+  .inputs-group-container .input-item {
+    flex-direction: row-reverse;
+  }
+
   .form-input {
     width: 100%; /* Makes it responsive within the flex container */
     flex-shrink: 1;

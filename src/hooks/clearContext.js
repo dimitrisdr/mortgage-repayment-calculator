@@ -1,0 +1,1 @@
+export const ClearContext = React.createContext(null)

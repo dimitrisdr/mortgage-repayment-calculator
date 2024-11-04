@@ -4,13 +4,14 @@ import { DataContext } from "../hooks/clearContext"
 
 export default function NumberInputGroup({children, name, label, inputValue}) {
 
-    const {inputValues, setInputValues} = useContext(DataContext)
+    const {inputValues, setInputValues, allValid, setAllValid} = useContext(DataContext)
     const [valid, setValid] = useState(true)
 
     function handleChange(e) {
         const regexPatternForPositive = /^[0-9]*\.?[0-9]+$/
         const {name, value} = e.target;
         setValid(regexPatternForPositive.test(value))
+        setAllValid(false)
         setInputValues((previewsValues) => ({...previewsValues, [name]:value}));   
     }
 
@@ -31,7 +32,7 @@ export default function NumberInputGroup({children, name, label, inputValue}) {
                     onChange={handleChange}
                 />
             </div>
-            {!valid &&  <span className="error-state clr-red">Invalid value</span> }    
+            {!valid  &&  <span className="error-state clr-red">Invalid value</span> }    
         </div>
     )
 }

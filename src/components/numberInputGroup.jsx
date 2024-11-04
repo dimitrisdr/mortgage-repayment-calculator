@@ -4,16 +4,18 @@ import { DataContext } from "../hooks/clearContext"
 
 export default function NumberInputGroup({children, name, label, inputValue}) {
 
-    const {inputValues, setInputValues, allValid, setAllValid} = useContext(DataContext)
+    const {inputValues, setInputValues} = useContext(DataContext)
     const [valid, setValid] = useState(true)
 
     function handleChange(e) {
-        const regexPatternForPositive = /^[0-9]*\.?[0-9]+$/
+        const regexPatternForPositive = /^$|^(?!0(\.0+)?$)[0-9]*\.?[0-9]+$/;
         const {name, value} = e.target;
-        setValid(regexPatternForPositive.test(value))
-        setAllValid(false)
-        setInputValues((previewsValues) => ({...previewsValues, [name]:value}));   
+        setValid(regexPatternForPositive.test(value));
+        setInputValues((previewsValues) => ({...previewsValues, [name]:value}));
+
     }
+
+
 
     return (
         <div className="form-item grid-item">
@@ -26,7 +28,7 @@ export default function NumberInputGroup({children, name, label, inputValue}) {
                     type="number" 
                     className="form-input"
                     inputMode="decimal" 
-                    min={0}
+                    min={1}
                     name={name}
                     value={inputValue} 
                     onChange={handleChange}

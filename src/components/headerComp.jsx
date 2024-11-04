@@ -4,7 +4,6 @@ import { DataContext } from "../hooks/clearContext"
 export default function HeaderComp() {
 
     const {inputValues, setInputValues} = useContext(DataContext)
-    // console.log(setInputValues)
     function handleClick() {
         setInputValues((previousData) => {
             const newdata = Object.keys(previousData).reduce((acc, key) => {

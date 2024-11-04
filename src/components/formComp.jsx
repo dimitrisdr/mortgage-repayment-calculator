@@ -6,7 +6,6 @@ import { DataContext } from "../hooks/clearContext"
 export default function FormComp() {
     
     const {inputValues, setInputValues} = useContext(DataContext) 
-    console.log(inputValues)
 
     return (
         <form action="POST" className="form grid-item">

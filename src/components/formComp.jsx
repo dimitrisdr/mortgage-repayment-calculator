@@ -6,9 +6,15 @@ import { DataContext } from "../hooks/clearContext"
 export default function FormComp() {
     
     const {inputValues, setInputValues} = useContext(DataContext) 
-
+    
+    function handleSubmit(e) {
+        e.preventDefault();
+        let data = Object.fromEntries(new FormData(e.target))
+        console.log(data)
+    }
+ 
     return (
-        <form action="POST" className="form grid-item">
+        <form onSubmit={handleSubmit} action="POST" className="form grid-item">
             <NumberInputGroup name={'amount'} label={'$'} inputValue={inputValues.amount} >Mortage Amount</NumberInputGroup> 
             <div className="inputs-group-container flex-item">
                 <NumberInputGroup name={'term'} label={'years'} inputValue={inputValues.term}>Mortage Term</NumberInputGroup> 

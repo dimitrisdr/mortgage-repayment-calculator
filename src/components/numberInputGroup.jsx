@@ -32,6 +32,7 @@ export default function NumberInputGroup({children, name, label, inputValue}) {
                     name={name}
                     value={inputValue} 
                     onChange={handleChange}
+                    required
                 />
             </div>
             {!valid  &&  <span className="error-state clr-red">Invalid value</span> }    

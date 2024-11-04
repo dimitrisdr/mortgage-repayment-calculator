@@ -3,15 +3,13 @@ import HeaderComp from "./headerComp"
 import FormComp from "./formComp"
 import { DataContext } from "../hooks/clearContext"
 
-const data = {amount:'', term:'', rate:'', mortageType: ''}
 
-export default function Calculator() {
-    const [allValid, setAllValid] = useState(true)
+export default function Calculator({data}) {
     const [inputValues, setInputValues] = useState(data)
     
     return (
         <section className="calculator-section grid-item bg-clr-white" aria-label="Mortage Calculator">
-            <DataContext.Provider value={{inputValues, setInputValues, allValid, setAllValid}}>           
+            <DataContext.Provider value={{inputValues, setInputValues}}>           
                 <HeaderComp />
                 <div className="form-container">
                     <FormComp />

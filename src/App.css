@@ -26,6 +26,7 @@
 
 .clear-btn {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .form-item {
@@ -137,7 +138,6 @@
 
 .results-section {
   padding: 2rem 1.5rem;
-
 }
 
 .empty-results, .results-section-text{

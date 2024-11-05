@@ -22,7 +22,6 @@ export default function RadioGroup() {
                         value="repayment"
                         onChange={handleChange}
                         checked={inputValues.mortageType === 'repayment'}
-                        required
                 />
                 <label htmlFor="repayment" className="radio-group-label flex-item clr-slate-900 fw-700">
                     <div className="custom-radio grid-item"></div>

@@ -10,12 +10,16 @@ export default function FormComp() {
     function handleSubmit(e) {
         e.preventDefault();
         let data = Object.fromEntries(new FormData(e.target))
-        console.log(data)
+        if (!Object.keys(data).includes('mortageType')) {
+            console.log('invalid')
+        }else{
+            console.log('valid')
+        }
     }
  
     return (
         <form onSubmit={handleSubmit} action="POST" className="form grid-item">
-            <NumberInputGroup name={'amount'} label={'$'} inputValue={inputValues.amount} >Mortage Amount</NumberInputGroup> 
+            <NumberInputGroup name={'amount'} label={'$'} inputValue={inputValues.amount}>Mortage Amount</NumberInputGroup> 
             <div className="inputs-group-container flex-item">
                 <NumberInputGroup name={'term'} label={'years'} inputValue={inputValues.term}>Mortage Term</NumberInputGroup> 
                 <NumberInputGroup name={'rate'} label={'%'} inputValue={inputValues.rate}>Interest Rate</NumberInputGroup> 

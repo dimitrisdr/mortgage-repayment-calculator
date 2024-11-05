@@ -1,20 +1,21 @@
 import './App.css'
 import Calculator from './components/calculator'
 import Results from './components/results'
-import { ValidateContext } from './hooks/validateContext'
+import { DataContext } from './hooks/clearContext'
 import { useState } from 'react'
-function App() {
 
-  const [formIsValid, setFormIsValid] = useState(false)
-  const data = {amount:'', term:'', rate:'', mortageType: ''}
+const data = {amount:'', term:'', rate:'', mortageType: ''};
+
+function App() {
+  const [formIsValid, setFormIsValid] = useState(false);
+  const [inputValues, setInputValues] = useState(data)
   
   return (
-    
     <main className='main grid-item'>
-      <ValidateContext.Provider value={null}>
-        <Calculator data= {data} />
-        <Results data= {data} />
-      </ValidateContext.Provider>
+      <DataContext.Provider value={{inputValues, setInputValues, formIsValid, setFormIsValid}}>
+        <Calculator data={data} />
+        <Results data={data} />
+      </DataContext.Provider>
     </main>
   )
 }

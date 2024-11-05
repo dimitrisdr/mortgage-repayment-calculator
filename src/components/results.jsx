@@ -5,12 +5,13 @@ import { DataContext } from "../hooks/clearContext";
 
 export default function Results () {
 
-    const {isValid, setFormIsValid} = useContext(DataContext)
-    console.log(isValid)
+    const {formIsValid, setFormIsValid} = useContext(DataContext)
+
     return (
         <section className="main-results-section grid-item bg-clr-slate-900" aria-label="Main results section">
-            <ResultsEmpty/>
-            {/* <CalculatedResults/> */}
+            
+            {formIsValid ? <CalculatedResults/> : <ResultsEmpty/>}     
+            
         </section>
     )
 }

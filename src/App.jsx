@@ -13,8 +13,8 @@ function App() {
   return (
     <main className='main grid-item'>
       <DataContext.Provider value={{inputValues, setInputValues, formIsValid, setFormIsValid}}>
-        <Calculator data={data} />
-        <Results data={data} />
+        <Calculator  />
+        <Results />
       </DataContext.Provider>
     </main>
   )

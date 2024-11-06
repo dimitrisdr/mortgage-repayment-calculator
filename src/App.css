@@ -31,13 +31,17 @@
 
 .form-item {
   --gap:0.5rem;
-  align-self: flex-start;
+}
+
+.inputs-group-container .input-item {
+  flex-direction: row-reverse;
 }
 
 .input-item {
   --gap:0;
   border:1px solid var(--Slate-700);
   border-radius: 4px;
+  width: 100%;
 }
 
 .input-item.input-item:is(.input-item[data-error="false"]) {
@@ -211,14 +215,16 @@
     flex-direction: row;
   }
 
-  .inputs-group-container .input-item {
-    flex-direction: row-reverse;
-  }
-
   .form-input {
     width: 100%; /* Makes it responsive within the flex container */
     flex-shrink: 1;
+    flex-grow: 1;
   }
+
+  
+.form-item {
+  align-self: flex-start;
+}
 
   .calc-btn {
     justify-self: flex-start;

@@ -3,13 +3,14 @@ import { DataContext } from "../hooks/clearContext"
 
 export default function HeaderComp() {
 
-    const {inputValues, setInputValues} = useContext(DataContext)
+    const {inputValues, setInputValues, formIsValid, setFormIsValid} = useContext(DataContext)
     function handleClick() {
         setInputValues((previousData) => {
             const newdata = Object.keys(previousData).reduce((acc, key) => {
                 acc[key] = '';
                 return acc;
             }, {})
+            setFormIsValid(false)
             return newdata
         })
     }

@@ -1,4 +1,11 @@
+import { useContext } from "react"
+import { DataContext } from "../hooks/clearContext"
+
+
 export default function ResultsEmpty() {
+
+    const {inputValues, setInputValues} = useContext(DataContext)
+
     return (
         <section className="results-section-empty grid-item bg-clr-slate-900" aria-label="Calculation instructions">
             <img src="src\assets\images\illustration-empty.svg" alt="empty illustration" className="img" />

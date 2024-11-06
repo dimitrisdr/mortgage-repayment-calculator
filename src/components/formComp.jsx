@@ -5,16 +5,13 @@ import { DataContext } from "../hooks/clearContext"
 
 export default function FormComp() {
     
-    const {inputValues, setInputValues} = useContext(DataContext) 
+    const {inputValues, setInputValues,formIsValid, setFormIsValid} = useContext(DataContext) 
     
     function handleSubmit(e) {
         e.preventDefault();
         let data = Object.fromEntries(new FormData(e.target))
-        if (!Object.keys(data).includes('mortageType')) {
-            console.log('invalid')
-        }else{
-            console.log('valid')
-        }
+        const isNowValid =  (!Object.keys(data).includes('mortageType')) ? false : true;
+        setFormIsValid(isNowValid)
     }
  
     return (

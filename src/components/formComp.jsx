@@ -23,7 +23,7 @@ export default function FormComp() {
             </div>
             <RadioGroup />
             <button className="calc-btn bg-clr-lime flex-item">
-                <img src="/assets/images/icon-calculator.svg" alt="calculator icon" className="img calc-img" />                 
+                <img src="/mortgage-repayment-calculator/assets/images/icon-calculator.svg" alt="calculator icon" className="img calc-img" />                 
                 <span className="calc-btn-text clr-slate-900 fw-700">Calculate Repayments</span>
             </button>
         </form>

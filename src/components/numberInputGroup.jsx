@@ -24,7 +24,8 @@ export default function NumberInputGroup({children, name, label, inputValue}) {
             </label>
             <div className="input-item flex-item" data-error={valid}>
                 <span className={`form-item-label fw-500 ${valid?'bg-clr-slate-100': 'clr-white bg-clr-red'} clr-slate-900 fs-500`}>{label}</span>
-                <input 
+                <input
+                    id={name}
                     type="number" 
                     className="form-input"
                     inputMode="decimal" 
